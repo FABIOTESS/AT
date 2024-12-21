@@ -1,0 +1,5 @@
+Approach,Total Runs,Successful Attacks,Unsuccessful Attacks,Total Time Taken (s),Average Time per Run (s)
+Approach 0 (PPO-Based),1000,0,1000,4.5591,0.0046
+Approach 1 (Manual Attack),1000,1000,0,0.0469,0.0
+Approach 2 (Cyber Kill Chain Simulation),1000,1000,0,0.0477,0.0
+Approach 3 (Privilege Escalation),1000,842,158,0.0883,0.0001

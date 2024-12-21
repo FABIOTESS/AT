@@ -1,0 +1,117 @@
+subnets: [1, 1, 1, 1, 1]
+topology: [[1, 0, 0, 0, 1, 1],
+           [0, 1, 1, 0, 0, 0],
+           [0, 1, 1, 1, 0, 0],
+           [0, 0, 1, 1, 1, 0],
+           [1, 0, 0, 1, 1, 1],
+           [1, 0, 0, 0, 1, 1]]
+sensitive_hosts:
+  (1, 0): 100
+  (4, 0): 100
+os:
+  - linux
+  - windows
+services:
+  - ssh
+  - http
+processes:
+  - nginx
+  - apache
+  - tomcat
+exploits:
+  e_ssh:
+    service: ssh
+    os: linux
+    prob: 0.8
+    cost: 1
+    access: user
+  e_http:
+    service: http
+    os: windows
+    prob: 0.7
+    cost: 1
+    access: user
+privilege_escalation:
+  pe_apache:
+    process: apache
+    os: linux
+    prob: 0.9
+    cost: 1
+    access: root
+  pe_tomcat:
+    process: tomcat
+    os: windows
+    prob: 0.85
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+  (1, 0):
+    os: linux
+    services: [ssh, http]
+    processes: [apache, tomcat]
+    firewall:
+      (3, 0): [ssh]
+      (4, 0): [http]
+  (2, 0):
+    os: windows
+    services: [http, ssh]
+    processes: [apache, tomcat]
+    firewall:
+      (1, 0): [http]
+      (4, 0): [ssh]
+  (3, 0):
+    os: linux
+    services: [ssh]
+    processes: [apache]
+    firewall:
+      (2, 0): [ssh]
+      (4, 0): [http]
+  (4, 0):
+    os: windows
+    services: [http]
+    processes: [tomcat, nginx]
+    firewall:
+      (1, 0): [http]
+      (3, 0): [ssh]
+  (5, 0):
+    os: linux
+    services: [ssh]
+    processes: [nginx, apache]
+    firewall:
+      (2, 0): [ssh]
+firewall:
+  (0, 1): [ssh, http]
+  (1, 0): []
+  (0, 2): []
+  (2, 0): [ssh]
+  (0, 3): []
+  (3, 0): []
+  (0, 4): [http]
+  (4, 0): []
+  (0, 5): [ssh]
+  (5, 0): []
+  (1, 2): []
+  (2, 1): [ssh]
+  (1, 3): []
+  (3, 1): [ssh]
+  (1, 4): [ssh, http]
+  (4, 1): []
+  (1, 5): [http]
+  (5, 1): [ssh]
+  (2, 3): []
+  (3, 2): []
+  (2, 4): [http]
+  (4, 2): []
+  (2, 5): [ssh]
+  (5, 2): []
+  (3, 4): [ssh, http]
+  (4, 3): [http]
+  (3, 5): []
+  (5, 3): []
+  (4, 5): [ssh, http]
+  (5, 4): []
+step_limit: 1000

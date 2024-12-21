@@ -1,0 +1,9 @@
+nasim
+stable-baselines3
+gym
+numpy
+matplotlib
+tqdm
+pandas
+pyyaml
+joblib

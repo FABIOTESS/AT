@@ -1,0 +1,553 @@
+2024-12-21 13:17:24,561 INFO Starting Run 1/10
+2024-12-21 13:17:24,564 ERROR Run 1 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,564 INFO Starting Run 2/10
+2024-12-21 13:17:24,564 ERROR Run 2 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,564 INFO Starting Run 3/10
+2024-12-21 13:17:24,564 ERROR Run 3 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,564 INFO Starting Run 4/10
+2024-12-21 13:17:24,564 ERROR Run 4 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,564 INFO Starting Run 5/10
+2024-12-21 13:17:24,565 ERROR Run 5 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,565 INFO Starting Run 6/10
+2024-12-21 13:17:24,565 ERROR Run 6 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,565 INFO Starting Run 7/10
+2024-12-21 13:17:24,565 ERROR Run 7 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,565 INFO Starting Run 8/10
+2024-12-21 13:17:24,565 ERROR Run 8 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,565 INFO Starting Run 9/10
+2024-12-21 13:17:24,565 ERROR Run 9 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,565 INFO Starting Run 10/10
+2024-12-21 13:17:24,565 ERROR Run 10 failed: [Errno 2] No such file or directory: 'config/config.yaml'
+2024-12-21 13:17:24,566 INFO 
+======================================
+2024-12-21 13:17:24,566 INFO Approach 0 Experiment Summary
+2024-12-21 13:17:24,566 INFO ======================================
+2024-12-21 13:17:24,566 INFO Total Runs: 10
+2024-12-21 13:17:24,566 INFO Successful Attacks: 0
+2024-12-21 13:17:24,566 INFO Unsuccessful Attacks: 10
+2024-12-21 13:17:24,566 INFO Total Time Taken: 0.004015445709228516
+2024-12-21 13:17:24,566 INFO Average Time per Run: 0.0004015445709228516
+2024-12-21 13:18:09,394 INFO Starting Run 1/10
+2024-12-21 13:18:09,398 ERROR Run 1 failed: 
+2024-12-21 13:18:09,398 INFO Starting Run 2/10
+2024-12-21 13:18:09,398 ERROR Run 2 failed: 
+2024-12-21 13:18:09,398 INFO Starting Run 3/10
+2024-12-21 13:18:09,398 ERROR Run 3 failed: 
+2024-12-21 13:18:09,399 INFO Starting Run 4/10
+2024-12-21 13:18:09,399 ERROR Run 4 failed: 
+2024-12-21 13:18:09,399 INFO Starting Run 5/10
+2024-12-21 13:18:09,399 ERROR Run 5 failed: 
+2024-12-21 13:18:09,399 INFO Starting Run 6/10
+2024-12-21 13:18:09,399 ERROR Run 6 failed: 
+2024-12-21 13:18:09,399 INFO Starting Run 7/10
+2024-12-21 13:18:09,400 ERROR Run 7 failed: 
+2024-12-21 13:18:09,400 INFO Starting Run 8/10
+2024-12-21 13:18:09,400 ERROR Run 8 failed: 
+2024-12-21 13:18:09,400 INFO Starting Run 9/10
+2024-12-21 13:18:09,400 ERROR Run 9 failed: 
+2024-12-21 13:18:09,400 INFO Starting Run 10/10
+2024-12-21 13:18:09,400 ERROR Run 10 failed: 
+2024-12-21 13:18:09,401 INFO 
+======================================
+2024-12-21 13:18:09,401 INFO Approach 0 Experiment Summary
+2024-12-21 13:18:09,401 INFO ======================================
+2024-12-21 13:18:09,401 INFO Total Runs: 10
+2024-12-21 13:18:09,401 INFO Successful Attacks: 0
+2024-12-21 13:18:09,401 INFO Unsuccessful Attacks: 10
+2024-12-21 13:18:09,401 INFO Total Time Taken: 0.005780458450317383
+2024-12-21 13:18:09,401 INFO Average Time per Run: 0.0005780458450317383
+2024-12-21 13:21:22,728 INFO Starting Run 1/10
+2024-12-21 13:21:57,827 INFO Starting Run 1/10
+2024-12-21 13:21:57,831 ERROR Run 1 failed with error: 
+2024-12-21 13:21:57,832 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,832 INFO Starting Run 2/10
+2024-12-21 13:21:57,832 ERROR Run 2 failed with error: 
+2024-12-21 13:21:57,832 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,833 INFO Starting Run 3/10
+2024-12-21 13:21:57,833 ERROR Run 3 failed with error: 
+2024-12-21 13:21:57,833 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,833 INFO Starting Run 4/10
+2024-12-21 13:21:57,833 ERROR Run 4 failed with error: 
+2024-12-21 13:21:57,833 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,833 INFO Starting Run 5/10
+2024-12-21 13:21:57,834 ERROR Run 5 failed with error: 
+2024-12-21 13:21:57,834 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,834 INFO Starting Run 6/10
+2024-12-21 13:21:57,834 ERROR Run 6 failed with error: 
+2024-12-21 13:21:57,834 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,834 INFO Starting Run 7/10
+2024-12-21 13:21:57,834 ERROR Run 7 failed with error: 
+2024-12-21 13:21:57,834 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,834 INFO Starting Run 8/10
+2024-12-21 13:21:57,835 ERROR Run 8 failed with error: 
+2024-12-21 13:21:57,835 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,835 INFO Starting Run 9/10
+2024-12-21 13:21:57,835 ERROR Run 9 failed with error: 
+2024-12-21 13:21:57,835 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,835 INFO Starting Run 10/10
+2024-12-21 13:21:57,835 ERROR Run 10 failed with error: 
+2024-12-21 13:21:57,835 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:21:57,836 INFO 
+======================================
+2024-12-21 13:21:57,836 INFO Approach 0 Experiment Summary
+2024-12-21 13:21:57,836 INFO ======================================
+2024-12-21 13:21:57,836 INFO Total Runs: 10
+2024-12-21 13:21:57,836 INFO Successful Attacks: 0
+2024-12-21 13:21:57,836 INFO Unsuccessful Attacks: 10
+2024-12-21 13:21:57,836 INFO Total Time Taken: 0.007416248321533203
+2024-12-21 13:21:57,836 INFO Average Time per Run: 0.0007416248321533203
+2024-12-21 13:22:09,424 INFO Starting Run 1/10
+2024-12-21 13:22:09,430 ERROR Run 1 failed with error: 
+2024-12-21 13:22:09,431 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,431 INFO Starting Run 2/10
+2024-12-21 13:22:09,432 ERROR Run 2 failed with error: 
+2024-12-21 13:22:09,432 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,432 INFO Starting Run 3/10
+2024-12-21 13:22:09,432 ERROR Run 3 failed with error: 
+2024-12-21 13:22:09,432 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,432 INFO Starting Run 4/10
+2024-12-21 13:22:09,432 ERROR Run 4 failed with error: 
+2024-12-21 13:22:09,433 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,433 INFO Starting Run 5/10
+2024-12-21 13:22:09,433 ERROR Run 5 failed with error: 
+2024-12-21 13:22:09,433 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,433 INFO Starting Run 6/10
+2024-12-21 13:22:09,433 ERROR Run 6 failed with error: 
+2024-12-21 13:22:09,433 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,433 INFO Starting Run 7/10
+2024-12-21 13:22:09,433 ERROR Run 7 failed with error: 
+2024-12-21 13:22:09,434 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,434 INFO Starting Run 8/10
+2024-12-21 13:22:09,434 ERROR Run 8 failed with error: 
+2024-12-21 13:22:09,434 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,434 INFO Starting Run 9/10
+2024-12-21 13:22:09,434 ERROR Run 9 failed with error: 
+2024-12-21 13:22:09,434 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,434 INFO Starting Run 10/10
+2024-12-21 13:22:09,434 ERROR Run 10 failed with error: 
+2024-12-21 13:22:09,434 ERROR Traceback (most recent call last):
+  File "/Users/fabio/PycharmProjects/PythonProject/simulations/approach0.py", line 46, in run_ppo_simulation
+    run_results_df = agent.train_and_evaluate()  # DataFrame with a "success" column
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 84, in train_and_evaluate
+    self.train()
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 36, in train
+    train_env = self.load_environment()
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/agents/ppo_agent.py", line 29, in load_environment
+    env = Monitor(env)             # Monitor expects a single Env
+          ^^^^^^^^^^^^
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/stable_baselines3/common/monitor.py", line 40, in __init__
+    super().__init__(env=env)
+  File "/Users/fabio/PycharmProjects/PythonProject/.venv/lib/python3.11/site-packages/gymnasium/core.py", line 310, in __init__
+    assert isinstance(env, Env)
+AssertionError
+
+2024-12-21 13:22:09,435 INFO 
+======================================
+2024-12-21 13:22:09,435 INFO Approach 0 Experiment Summary
+2024-12-21 13:22:09,435 INFO ======================================
+2024-12-21 13:22:09,435 INFO Total Runs: 10
+2024-12-21 13:22:09,435 INFO Successful Attacks: 0
+2024-12-21 13:22:09,435 INFO Unsuccessful Attacks: 10
+2024-12-21 13:22:09,435 INFO Total Time Taken: 0.00964212417602539
+2024-12-21 13:22:09,435 INFO Average Time per Run: 0.000964212417602539
+2024-12-21 13:23:30,972 INFO Starting Run 1/10
+2024-12-21 13:25:25,106 INFO Starting Run 1/10
+2024-12-21 13:26:03,117 INFO Starting Run 1/10
+2024-12-21 13:26:21,134 INFO Starting Run 1/10
+2024-12-21 13:27:15,646 INFO Starting Run 1/10
+2024-12-21 13:27:30,680 INFO Starting Run 1/10
+2024-12-21 13:28:11,821 INFO Run 1 Completed - Success: True, Time Taken: 41.14 seconds
+2024-12-21 13:28:11,822 INFO Starting Run 2/10
+2024-12-21 13:28:53,104 INFO Run 2 Completed - Success: True, Time Taken: 41.28 seconds
+2024-12-21 13:28:53,105 INFO Starting Run 3/10
+2024-12-21 13:29:35,529 INFO Run 3 Completed - Success: True, Time Taken: 42.42 seconds
+2024-12-21 13:29:35,530 INFO Starting Run 4/10
+2024-12-21 13:30:17,757 INFO Run 4 Completed - Success: True, Time Taken: 42.23 seconds
+2024-12-21 13:30:17,758 INFO Starting Run 5/10
+2024-12-21 13:31:01,355 INFO Run 5 Completed - Success: True, Time Taken: 43.60 seconds
+2024-12-21 13:31:01,355 INFO Starting Run 6/10
+2024-12-21 13:31:45,858 INFO Run 6 Completed - Success: True, Time Taken: 44.50 seconds
+2024-12-21 13:31:45,859 INFO Starting Run 7/10
+2024-12-21 13:32:29,556 INFO Run 7 Completed - Success: True, Time Taken: 43.70 seconds
+2024-12-21 13:32:29,556 INFO Starting Run 8/10
+2024-12-21 13:33:12,585 INFO Run 8 Completed - Success: True, Time Taken: 43.03 seconds
+2024-12-21 13:33:12,585 INFO Starting Run 9/10
+2024-12-21 13:33:57,239 INFO Run 9 Completed - Success: True, Time Taken: 44.65 seconds
+2024-12-21 13:33:57,239 INFO Starting Run 10/10
+2024-12-21 13:34:41,580 INFO Run 10 Completed - Success: True, Time Taken: 44.34 seconds
+2024-12-21 13:34:41,581 INFO 
+======================================
+2024-12-21 13:34:41,581 INFO Approach 0 Experiment Summary
+2024-12-21 13:34:41,581 INFO ======================================
+2024-12-21 13:34:41,581 INFO Total Runs: 10
+2024-12-21 13:34:41,581 INFO Successful Attacks: 0
+2024-12-21 13:34:41,581 INFO Unsuccessful Attacks: 10
+2024-12-21 13:34:41,581 INFO Total Time Taken: 430.89569568634033
+2024-12-21 13:34:41,581 INFO Average Time per Run: 43.08956956863403
+2024-12-21 13:40:57,968 INFO Starting Run 1/10
+2024-12-21 13:41:18,062 INFO Run 1 Completed - Success: True, Time Taken: 20.09 seconds
+2024-12-21 13:41:18,063 INFO Starting Run 2/10
+2024-12-21 13:44:11,815 INFO Starting Run 1/10
+2024-12-21 13:44:32,578 INFO Starting Run 2/10
+2024-12-21 13:44:52,752 INFO Starting Run 3/10
+2024-12-21 13:45:13,629 INFO Starting Run 4/10
+2024-12-21 13:45:35,091 INFO Starting Run 5/10
+2024-12-21 13:45:56,370 INFO Starting Run 6/10
+2024-12-21 13:46:17,866 INFO Starting Run 7/10
+2024-12-21 13:46:39,673 INFO Starting Run 8/10
+2024-12-21 13:47:01,451 INFO Starting Run 9/10
+2024-12-21 13:47:23,607 INFO Starting Run 10/10
+2024-12-21 13:47:35,803 INFO Starting Run 1/10
+2024-12-21 13:47:57,408 INFO Starting Run 2/10
+2024-12-21 13:48:18,924 INFO Starting Run 3/10
+2024-12-21 13:48:40,822 INFO Starting Run 4/10
+2024-12-21 13:49:03,191 INFO Starting Run 5/10
+2024-12-21 13:49:26,026 INFO Starting Run 6/10
+2024-12-21 13:49:49,007 INFO Starting Run 7/10
+2024-12-21 13:52:10,731 INFO Starting Run 8/10
+2024-12-21 13:52:31,359 INFO Starting Run 9/10
+2024-12-21 13:52:52,223 INFO Starting Run 10/10
+2024-12-21 13:53:13,846 INFO 
+======================================
+2024-12-21 13:53:13,847 INFO Approach 0 Experiment Summary
+2024-12-21 13:53:13,847 INFO ======================================
+2024-12-21 13:53:13,847 INFO Total Runs: 10
+2024-12-21 13:53:13,847 INFO Successful Attacks: 0
+2024-12-21 13:53:13,847 INFO Unsuccessful Attacks: 10
+2024-12-21 13:53:13,847 INFO Total Time Taken: 338.0243320465088
+2024-12-21 13:53:13,847 INFO Average Time per Run: 33.80243320465088
+2024-12-21 13:58:47,806 INFO Starting Run 1/1
+2024-12-21 13:59:09,015 INFO 
+======================================
+2024-12-21 13:59:09,015 INFO Approach 0 Experiment Summary
+2024-12-21 13:59:09,015 INFO ======================================
+2024-12-21 13:59:09,015 INFO Total Runs: 1
+2024-12-21 13:59:09,015 INFO Successful Attacks: 1
+2024-12-21 13:59:09,015 INFO Unsuccessful Attacks: 0
+2024-12-21 13:59:09,015 INFO Total Time Taken (s): 21.20774483680725
+2024-12-21 13:59:09,015 INFO Average Time per Run (s): 21.20774483680725

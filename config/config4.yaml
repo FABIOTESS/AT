@@ -1,0 +1,10 @@
+# config/config.yaml
+
+# Path to the NASIM scenario configuration YAML file
+network_config_file: 'config/tiny.yaml'
+
+# General settings
+log_dir: 'logs'
+master_number: 1000
+total_timesteps: 100000
+n_eval_episodes: 10

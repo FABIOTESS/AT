@@ -1,0 +1,135 @@
+
+subnets: [1, 1, 1, 1, 1, 1]
+topology: [
+    [0, 1, 0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 0, 1, 0],
+    [0, 1, 0, 1, 0, 0, 1],
+    [0, 0, 1, 0, 1, 1, 0],
+    [1, 0, 0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 1, 0, 0],
+    [1, 0, 1, 0, 0, 0, 0]
+]
+sensitive_hosts:
+    (4, 0): 100
+    (6, 0): 100
+os:
+    - Linux
+    - Windows
+services:
+    - SSH
+    - HTTP
+processes:
+    - Apache
+    - Tomcat
+    - IIS
+exploits:
+    e_ssh:
+        service: SSH
+        os: Linux
+        prob: 0.8
+        cost: 1
+        access: user
+    e_http:
+        service: HTTP
+        os: Windows
+        prob: 0.7
+        cost: 1
+        access: user
+privilege_escalation:
+    pe_apache:
+        process: Apache
+        os: Linux
+        prob: 0.9
+        cost: 1
+        access: root
+    pe_iis:
+        process: IIS
+        os: Windows
+        prob: 0.85
+        cost: 1
+        access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+    (1, 0):
+        os: Linux
+        services: [SSH, HTTP]
+        processes: [Apache, Tomcat]
+        firewall:
+            (3, 0): [SSH]
+            (5, 0): [HTTP]
+    (2, 0):
+        os: Windows
+        services: [HTTP, SSH]
+        processes: [Apache, IIS]
+        firewall:
+            (4, 0): [HTTP]
+            (6, 0): [SSH]
+    (3, 0):
+        os: Linux
+        services: [SSH]
+        processes: [Apache]
+        firewall:
+            (1, 0): [SSH]
+            (5, 0): [SSH]
+    (4, 0):
+        os: Windows
+        services: [HTTP]
+        processes: [IIS]
+        firewall:
+            (2, 0): [HTTP]
+            (6, 0): [HTTP]
+    (5, 0):
+        os: Linux
+        services: [SSH]
+        processes: [Apache, Tomcat]
+    (6, 0):
+        os: Windows
+        services: [SSH]
+        processes: [IIS]
+firewall:
+    (0, 1): [SSH, HTTP]
+    (1, 0): []
+    (0, 2): []
+    (2, 0): [SSH]
+    (0, 3): []
+    (3, 0): [SSH]
+    (0, 4): [HTTP]
+    (4, 0): []
+    (0, 5): [SSH]
+    (5, 0): []
+    (0, 6): [HTTP]
+    (6, 0): []
+    (1, 2): [HTTP]
+    (2, 1): [SSH]
+    (1, 3): []
+    (3, 1): [SSH]
+    (1, 4): []
+    (4, 1): [HTTP]
+    (1, 5): [SSH, HTTP]
+    (5, 1): []
+    (1, 6): []
+    (6, 1): [SSH]
+    (2, 3): [HTTP]
+    (3, 2): [SSH]
+    (2, 4): []
+    (4, 2): []
+    (2, 5): []
+    (5, 2): [SSH]
+    (2, 6): [HTTP]
+    (6, 2): []
+    (3, 4): [SSH, HTTP]
+    (4, 3): []
+    (3, 5): [SSH]
+    (5, 3): []
+    (3, 6): []
+    (6, 3): [SSH]
+    (4, 5): [HTTP]
+    (5, 4): []
+    (4, 6): []
+    (6, 4): [SSH]
+    (5, 6): [SSH]
+    (6, 5): []
+step_limit: 1000
