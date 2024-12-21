@@ -1,32 +1,47 @@
 project/
-│
+
 ├── agents/
-│   ├── __init__.py
-│   └── ppo_agent.py
-│
+
+│   ├── \_\_init\_\_.py
+
+│   └── ppo\_agent.py
+
 ├── wrappers/
-│   ├── __init__.py
-│   └── custom_wrappers.py
-│
+
+│   ├── \_\_init\_\_.py
+
+│   └── custom\_wrappers.py
+
 ├── environments/
-│   ├── __init__.py
-│   └── environment_loader.py
-│
+
+│   ├── \_\_init\_\_.py
+
+│   └── environment\_loader.py
+
 ├── simulations/
-│   ├── __init__.py
-│   ├── approach0.py
-│   ├── approach1.py
-│   ├── approach2.py
-│   └── approach3.py
-│
+
+│   ├── \_\_init\_\_.py
+
+│   ├── approach0.py
+
+│   ├── approach1.py
+
+│   ├── approach2.py
+
+│   └── approach3.py
+
 ├── utils/
-│   ├── __init__.py
-│   └── helpers.py
-│
+
+│   ├── \_\_init\_\_.py
+
+│   └── helpers.py
+
 ├── config/
-│   └── config.yaml
-│
+
+│   └── config.yaml
+
 ├── main.py
+
 └── requirements.txt
 
 
