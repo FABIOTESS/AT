@@ -126,7 +126,7 @@ if __name__ == "__main__":
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         # Run the main simulation with the specific config file
-        aggregate_results = main(config_file=f'config/config{i}.yaml', main_log_dir='logs', master_number=10)
+        aggregate_results = main(config_file=f'config/config{i}.yaml', main_log_dir='logs', master_number=100)
 
         # Iterate through each approach's results and append to all_results with iteration and timestamp
         for approach, result in aggregate_results.items():
