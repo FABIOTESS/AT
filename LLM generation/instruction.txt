@@ -1,0 +1,9 @@
+A tiny standard (one public network) network configuration
+
+3 hosts
+3 subnets
+1 service
+1 process
+1 os
+1 exploit
+1 privilege escalation
