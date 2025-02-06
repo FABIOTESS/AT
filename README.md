@@ -17,7 +17,7 @@ This project is a flexible network simulation framework that allows users to def
 
 ### LLM-Based Configuration
 
-Run AT/LLM generation/example_llm_generation.ipynb to create YAML configuration files/
+Run AT/LLM generation/example_llm_generation.ipynb to create YAML configuration files.
 
 ### Run The Simulation
 Run Main.py to create a benchmark of different approaches (logic behind tthe creation of those is explaine in AT/LLM generation/logic_pythonic_agents.ipynb) vs PPO algorithm.
