@@ -64,3 +64,16 @@ def test_killchain_agent_runs_episode():
     assert isinstance(result, EpisodeResult)
     assert result.steps >= 1
     sim.close()
+
+
+from cybersim.agents.stealth_agent import StealthAgent
+
+def test_stealth_agent_runs_episode():
+    sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
+    num_actions = sim.get_action_space().n
+    agent = StealthAgent(num_actions=num_actions)
+    result = agent.run_episode(sim, max_steps=100)
+    assert isinstance(result, EpisodeResult)
+    assert result.stealth_score is not None
+    assert 0.0 <= result.stealth_score <= 1.0
+    sim.close()
