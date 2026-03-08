@@ -40,3 +40,27 @@ def test_run_episode_returns_episode_result():
     assert result.steps <= 10
     assert isinstance(result.total_reward, float)
     sim.close()
+
+
+from cybersim.agents.probing_agent import ProbingAgent
+
+def test_probing_agent_runs_episode():
+    sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
+    num_actions = sim.get_action_space().n
+    agent = ProbingAgent(num_actions=num_actions)
+    result = agent.run_episode(sim, max_steps=100)
+    assert isinstance(result, EpisodeResult)
+    assert result.steps >= 1
+    sim.close()
+
+
+from cybersim.agents.killchain_agent import KillChainAgent
+
+def test_killchain_agent_runs_episode():
+    sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
+    num_actions = sim.get_action_space().n
+    agent = KillChainAgent(num_actions=num_actions)
+    result = agent.run_episode(sim, max_steps=100)
+    assert isinstance(result, EpisodeResult)
+    assert result.steps >= 1
+    sim.close()
