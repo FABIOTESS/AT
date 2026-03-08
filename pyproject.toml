@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "cybersim"
+version = "1.0.0"
+description = "LLM-driven cybersecurity simulation framework"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Fabio Rovai", email = "fabio@thetesseractacademy.com"},
+    {name = "Stylianos Kampakis", email = "stelios@thetesseractacademy.com"},
+]
+
+dependencies = [
+    "nasim>=0.9",
+    "stable-baselines3>=2.0",
+    "gymnasium>=0.29",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "pandas>=2.0",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+cybersim-benchmark = "cybersim.benchmarks.runner:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
