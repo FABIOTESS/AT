@@ -234,45 +234,72 @@ def plot_agent_radar(metrics: list[AgentMetrics], output_dir: Path) -> None:
 
 
 def plot_stealth_tradeoff(metrics: list[AgentMetrics], output_dir: Path) -> None:
-    """Scatter: stealth score vs compromise rate, grouped by agent (not per-config)."""
+    """Scatter: stealth score vs compromise rate.
+
+    Only the stealth agent has meaningful stealth scores; other agents are
+    shown as aggregate reference markers at x=0 so the chart stays clean.
+    """
+    by_agent = _group_by_agent(metrics)
     fig, ax = plt.subplots(figsize=(10, 7))
 
-    # Group by agent for clean legend
-    plotted_agents: set[str] = set()
-    for m in metrics:
-        stealth = m.avg_stealth_score if m.avg_stealth_score is not None else 0.0
-        label = m.agent_name.title() if m.agent_name not in plotted_agents else None
-        plotted_agents.add(m.agent_name)
+    for agent_name in sorted(by_agent.keys()):
+        agent_metrics = by_agent[agent_name]
+        has_stealth = any(m.avg_stealth_score is not None for m in agent_metrics)
+        color = _get_color(agent_name)
 
-        ax.scatter(
-            stealth,
-            m.compromise_rate * 100,
-            s=120,
-            color=_get_color(m.agent_name),
-            label=label,
-            alpha=0.8,
-            edgecolors="black",
-            linewidth=0.5,
-            zorder=3,
-        )
-        # Annotate with config name (small text)
-        ax.annotate(
-            _pretty_name(m.config_name),
-            (stealth, m.compromise_rate * 100),
-            textcoords="offset points",
-            xytext=(6, -4),
-            fontsize=7,
-            alpha=0.7,
-        )
+        if has_stealth:
+            # Plot each config individually — these have interesting spread
+            # Collect points first to compute label offsets that avoid overlap
+            points = []
+            for m in sorted(agent_metrics, key=lambda x: x.config_name):
+                stealth = m.avg_stealth_score if m.avg_stealth_score is not None else 0.0
+                points.append((stealth, m.compromise_rate * 100, _pretty_name(m.config_name)))
+
+            first = True
+            for i, (sx, sy, name) in enumerate(points):
+                ax.scatter(
+                    sx, sy, s=140, color=color, alpha=0.85,
+                    edgecolors="black", linewidth=0.5, zorder=3,
+                    label=agent_name.title() if first else None,
+                )
+                # Stagger vertical offset for points near each other
+                nearby = sum(
+                    1 for j, (ox, oy, _) in enumerate(points[:i])
+                    if abs(oy - sy) < 8 and abs(ox - sx) < 0.06
+                )
+                y_off = -6 - nearby * 16  # push labels down for each collision
+                ax.annotate(
+                    name, (sx, sy),
+                    textcoords="offset points", xytext=(8, y_off),
+                    fontsize=8, alpha=0.8,
+                )
+                first = False
+        else:
+            # Aggregate: single marker at x=0 for non-stealth agents
+            avg_cr = np.mean([m.compromise_rate * 100 for m in agent_metrics])
+            ax.scatter(
+                0, avg_cr, s=180, color=color, alpha=0.85,
+                edgecolors="black", linewidth=0.5, zorder=3,
+                marker="D", label=f"{agent_name.title()} (avg)",
+            )
+            ax.annotate(
+                f"{avg_cr:.0f}%", (0, avg_cr),
+                textcoords="offset points", xytext=(10, 0),
+                fontsize=9, fontweight="bold", alpha=0.8,
+            )
 
     ax.set_xlabel("Stealth Score")
     ax.set_ylabel("Compromise Rate (%)")
     ax.set_title("Stealth vs Compromise Trade-off")
-    ax.set_xlim(-0.02, None)
-    ax.set_ylim(-5, 110)
-    ax.legend(fontsize=11, framealpha=0.9)
+    ax.set_xlim(-0.03, None)
+    ax.set_ylim(-5, 115)
+    ax.legend(fontsize=10, framealpha=0.9, loc="lower right")
     _apply_style(ax)
     ax.grid(True, alpha=0.3, linestyle="--")
+
+    # Vertical separator between stealth=0 cluster and actual scores
+    ax.axvline(x=0.02, color="grey", linewidth=0.6, linestyle=":", alpha=0.5)
+
     fig.tight_layout()
     fig.savefig(output_dir / "stealth_tradeoff_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
