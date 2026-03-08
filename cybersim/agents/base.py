@@ -74,7 +74,11 @@ class AttackAgent(ABC):
                 break
 
         compromised = info.get("goal_reached", total_reward > 0) if info else total_reward > 0
-        stealth_score = self.compute_stealth_score(timeline) if hasattr(self, "compute_stealth_score") else None
+        stealth_score = (
+            self.compute_stealth_score(timeline)
+            if hasattr(self, "compute_stealth_score")
+            else None
+        )
 
         return EpisodeResult(
             compromised=compromised,

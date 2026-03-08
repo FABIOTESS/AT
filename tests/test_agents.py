@@ -1,6 +1,11 @@
-import pytest
 import numpy as np
+import pytest
+
 from cybersim.agents.base import AttackAgent, EpisodeResult
+from cybersim.agents.killchain_agent import KillChainAgent
+from cybersim.agents.ppo_agent import PPOAgent
+from cybersim.agents.probing_agent import ProbingAgent
+from cybersim.agents.stealth_agent import StealthAgent
 from cybersim.simulators.nasim_adapter import NaSimAdapter
 
 
@@ -42,8 +47,6 @@ def test_run_episode_returns_episode_result():
     sim.close()
 
 
-from cybersim.agents.probing_agent import ProbingAgent
-
 def test_probing_agent_runs_episode():
     sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
     num_actions = sim.get_action_space().n
@@ -53,8 +56,6 @@ def test_probing_agent_runs_episode():
     assert result.steps >= 1
     sim.close()
 
-
-from cybersim.agents.killchain_agent import KillChainAgent
 
 def test_killchain_agent_runs_episode():
     sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
@@ -66,8 +67,6 @@ def test_killchain_agent_runs_episode():
     sim.close()
 
 
-from cybersim.agents.stealth_agent import StealthAgent
-
 def test_stealth_agent_runs_episode():
     sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
     num_actions = sim.get_action_space().n
@@ -78,8 +77,6 @@ def test_stealth_agent_runs_episode():
     assert 0.0 <= result.stealth_score <= 1.0
     sim.close()
 
-
-from cybersim.agents.ppo_agent import PPOAgent
 
 def test_ppo_agent_trains_and_runs():
     sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")

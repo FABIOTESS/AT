@@ -1,7 +1,6 @@
 """Benchmark runner: executes all agents across all configs."""
 
 import argparse
-import time
 from pathlib import Path
 
 from cybersim.agents.base import AttackAgent, EpisodeResult

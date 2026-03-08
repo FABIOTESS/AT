@@ -1,5 +1,6 @@
 from utils.helpers import load_yaml_config
 
+
 def test_load_tiny_yaml():
     config = load_yaml_config('config/tiny.yaml')
     assert isinstance(config, dict), "Config should be a dictionary"

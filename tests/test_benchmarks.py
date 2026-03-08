@@ -1,6 +1,7 @@
 import pytest
+
 from cybersim.agents.base import EpisodeResult
-from cybersim.benchmarks.metrics import compute_metrics, AgentMetrics
+from cybersim.benchmarks.metrics import AgentMetrics, compute_metrics
 
 
 def _make_results(n_success: int, n_fail: int) -> list[EpisodeResult]:

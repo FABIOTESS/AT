@@ -1,4 +1,5 @@
 import pytest
+
 from cybersim.simulators.base import SimulatorInterface
 from cybersim.simulators.nasim_adapter import NaSimAdapter
 

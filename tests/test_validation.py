@@ -1,5 +1,4 @@
-import pytest
-from cybersim.validation.topology import validate_config, ValidationResult
+from cybersim.validation.topology import ValidationResult, validate_config
 
 
 def test_valid_config_passes():

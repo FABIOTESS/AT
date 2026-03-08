@@ -74,9 +74,15 @@ def validate_config(config_path: str) -> ValidationResult:
             continue
         subnet_idx, host_idx = parsed
         if subnet_idx < 1 or subnet_idx > num_subnets:
-            issues.append(f"Sensitive host {host_key}: subnet {subnet_idx} out of range (1-{num_subnets})")
+            issues.append(
+                f"Sensitive host {host_key}: subnet {subnet_idx} "
+                f"out of range (1-{num_subnets})"
+            )
         elif host_idx < 0 or host_idx >= subnets[subnet_idx - 1]:
-            issues.append(f"Sensitive host {host_key}: host {host_idx} out of range for subnet {subnet_idx}")
+            issues.append(
+                f"Sensitive host {host_key}: host {host_idx} "
+                f"out of range for subnet {subnet_idx}"
+            )
 
     # Check exploits reference valid services
     for name, exploit in exploits.items():
