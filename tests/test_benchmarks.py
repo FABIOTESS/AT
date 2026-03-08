@@ -65,12 +65,12 @@ def test_generate_plots(tmp_path):
     generate_all_plots(mock_metrics, tmp_path)
 
     expected_files = [
-        "compromise_rates.png",
-        "steps_comparison.png",
-        "time_comparison.png",
-        "scaling.png",
-        "agent_radar.png",
-        "stealth_tradeoff.png",
+        "compromise_rates_v2.png",
+        "steps_comparison_v2.png",
+        "time_comparison_v2.png",
+        "scaling_v2.png",
+        "agent_radar_v2.png",
+        "stealth_tradeoff_v2.png",
     ]
     for filename in expected_files:
         assert (tmp_path / filename).exists(), f"Missing plot: {filename}"

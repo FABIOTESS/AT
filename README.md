@@ -48,12 +48,12 @@ python -m cybersim.benchmarks.runner --output assets/ --episodes 100
 
 ## Benchmark Results
 
-![Compromise Rates](assets/compromise_rates.png)
-![Steps Comparison](assets/steps_comparison.png)
-![Reward Comparison](assets/time_comparison.png)
-![Scaling](assets/scaling.png)
-![Agent Radar](assets/agent_radar.png)
-![Stealth Trade-off](assets/stealth_tradeoff.png)
+![Compromise Rates](assets/compromise_rates_v2.png)
+![Steps Comparison](assets/steps_comparison_v2.png)
+![Reward Comparison](assets/time_comparison_v2.png)
+![Scaling](assets/scaling_v2.png)
+![Agent Radar](assets/agent_radar_v2.png)
+![Stealth Trade-off](assets/stealth_tradeoff_v2.png)
 
 ## Agents
 

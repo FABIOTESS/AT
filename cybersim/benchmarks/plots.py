@@ -100,7 +100,7 @@ def plot_compromise_rates(metrics: list[AgentMetrics], output_dir: Path) -> None
     ax.set_ylim(0, 110)
     _apply_style(ax)
     fig.tight_layout()
-    fig.savefig(output_dir / "compromise_rates.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "compromise_rates_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -130,7 +130,7 @@ def plot_steps_comparison(metrics: list[AgentMetrics], output_dir: Path) -> None
     ax.set_xticklabels([a.title() for a in agents], fontsize=11)
     _apply_style(ax)
     fig.tight_layout()
-    fig.savefig(output_dir / "steps_comparison.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "steps_comparison_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -160,7 +160,7 @@ def plot_time_comparison(metrics: list[AgentMetrics], output_dir: Path) -> None:
     ax.set_xticklabels([a.title() for a in agents], fontsize=11)
     _apply_style(ax)
     fig.tight_layout()
-    fig.savefig(output_dir / "time_comparison.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "time_comparison_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -189,7 +189,7 @@ def plot_scaling(metrics: list[AgentMetrics], output_dir: Path) -> None:
     plt.xticks(rotation=30, ha="right")
     _apply_style(ax)
     fig.tight_layout()
-    fig.savefig(output_dir / "scaling.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "scaling_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -229,7 +229,7 @@ def plot_agent_radar(metrics: list[AgentMetrics], output_dir: Path) -> None:
     ax.set_title("Agent Comparison Radar", y=1.08, fontsize=13, fontweight="bold")
     ax.legend(loc="upper right", bbox_to_anchor=(1.25, 1.1), fontsize=10)
     fig.tight_layout()
-    fig.savefig(output_dir / "agent_radar.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "agent_radar_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -274,7 +274,7 @@ def plot_stealth_tradeoff(metrics: list[AgentMetrics], output_dir: Path) -> None
     _apply_style(ax)
     ax.grid(True, alpha=0.3, linestyle="--")
     fig.tight_layout()
-    fig.savefig(output_dir / "stealth_tradeoff.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "stealth_tradeoff_v2.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
 
 
