@@ -1,0 +1,129 @@
+# LLM-generated configuration - hybrid cloud/on-prem network
+#
+# 8 hosts
+# 5 subnets
+# 4 services
+# 3 processes
+# 1 os
+# 4 exploits
+# 3 privilege escalations
+#
+subnets: [2, 2, 1, 1, 2]
+topology: [[ 1, 1, 0, 0, 0, 0],
+           [ 1, 1, 1, 0, 1, 0],
+           [ 0, 1, 1, 1, 0, 0],
+           [ 0, 0, 1, 1, 1, 1],
+           [ 0, 1, 0, 1, 1, 1],
+           [ 0, 0, 0, 1, 1, 1]]
+sensitive_hosts:
+  (3, 0): 100
+  (4, 0): 100
+  (5, 0): 100
+os:
+  - linux
+services:
+  - ssh
+  - http
+  - smtp
+  - ftp
+processes:
+  - apache
+  - postfix
+  - proftpd
+exploits:
+  e_ssh:
+    service: ssh
+    os: linux
+    prob: 0.8
+    cost: 1
+    access: user
+  e_http:
+    service: http
+    os: linux
+    prob: 0.7
+    cost: 1
+    access: user
+  e_smtp:
+    service: smtp
+    os: linux
+    prob: 0.6
+    cost: 1
+    access: user
+  e_ftp:
+    service: ftp
+    os: linux
+    prob: 0.5
+    cost: 1
+    access: user
+privilege_escalation:
+  pe_apache:
+    process: apache
+    os: linux
+    prob: 1.0
+    cost: 1
+    access: root
+  pe_postfix:
+    process: postfix
+    os: linux
+    prob: 0.9
+    cost: 1
+    access: root
+  pe_proftpd:
+    process: proftpd
+    os: linux
+    prob: 0.8
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+  (1, 0):
+    os: linux
+    services: [ssh, http]
+    processes: [apache]
+  (1, 1):
+    os: linux
+    services: [ssh, smtp]
+    processes: [postfix]
+  (2, 0):
+    os: linux
+    services: [ssh, http, ftp]
+    processes: [apache, proftpd]
+  (2, 1):
+    os: linux
+    services: [ssh, http]
+    processes: [apache]
+  (3, 0):
+    os: linux
+    services: [ssh, smtp, ftp]
+    processes: [postfix, proftpd]
+  (4, 0):
+    os: linux
+    services: [ssh, http, smtp]
+    processes: [apache, postfix]
+  (5, 0):
+    os: linux
+    services: [ssh, ftp]
+    processes: [proftpd]
+  (5, 1):
+    os: linux
+    services: [ssh, http, ftp]
+    processes: [apache, proftpd]
+firewall:
+  (0, 1): [ssh, http]
+  (1, 0): []
+  (1, 2): [ssh, http]
+  (2, 1): [ssh, http]
+  (1, 4): [ssh, smtp]
+  (4, 1): [ssh, smtp]
+  (2, 3): [ssh, ftp]
+  (3, 2): [ssh, ftp]
+  (3, 4): [ssh, smtp]
+  (4, 3): [ssh, smtp]
+  (3, 5): [ssh, ftp]
+  (5, 3): [ssh, ftp]
+  (4, 5): [ssh, http, ftp]
+  (5, 4): [ssh, http, ftp]
+step_limit: 1000

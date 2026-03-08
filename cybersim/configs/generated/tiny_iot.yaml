@@ -1,0 +1,59 @@
+# LLM-generated configuration - IoT network
+#
+# 2 hosts
+# 1 subnet
+# 2 services
+# 1 process
+# 1 os
+# 2 exploits
+# 1 privilege escalation
+#
+subnets: [2]
+topology: [[ 1, 1],
+           [ 1, 1]]
+sensitive_hosts:
+  (1, 1): 100
+os:
+  - linux
+services:
+  - ssh
+  - telnet
+processes:
+  - busybox
+exploits:
+  e_ssh:
+    service: ssh
+    os: linux
+    prob: 0.8
+    cost: 1
+    access: user
+  e_telnet:
+    service: telnet
+    os: linux
+    prob: 0.9
+    cost: 1
+    access: user
+privilege_escalation:
+  pe_busybox:
+    process: busybox
+    os: linux
+    prob: 1.0
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+  (1, 0):
+    os: linux
+    services: [ssh, telnet]
+    processes: [busybox]
+  (1, 1):
+    os: linux
+    services: [ssh, telnet]
+    processes: [busybox]
+firewall:
+  (0, 1): [ssh, telnet]
+  (1, 0): []
+step_limit: 1000

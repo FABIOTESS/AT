@@ -1,0 +1,62 @@
+# LLM-generated configuration - research lab network
+#
+# 2 hosts
+# 2 subnets
+# 2 services
+# 1 process
+# 1 os
+# 2 exploits
+# 1 privilege escalation
+#
+subnets: [1, 1]
+topology: [[ 1, 1, 0],
+           [ 1, 1, 1],
+           [ 0, 1, 1]]
+sensitive_hosts:
+  (2, 0): 100
+os:
+  - linux
+services:
+  - ssh
+  - ftp
+processes:
+  - proftpd
+exploits:
+  e_ssh:
+    service: ssh
+    os: linux
+    prob: 0.8
+    cost: 1
+    access: user
+  e_ftp:
+    service: ftp
+    os: linux
+    prob: 0.6
+    cost: 1
+    access: user
+privilege_escalation:
+  pe_proftpd:
+    process: proftpd
+    os: linux
+    prob: 1.0
+    cost: 1
+    access: root
+service_scan_cost: 1
+os_scan_cost: 1
+subnet_scan_cost: 1
+process_scan_cost: 1
+host_configurations:
+  (1, 0):
+    os: linux
+    services: [ssh, ftp]
+    processes: [proftpd]
+  (2, 0):
+    os: linux
+    services: [ssh, ftp]
+    processes: [proftpd]
+firewall:
+  (0, 1): [ssh]
+  (1, 0): []
+  (1, 2): [ssh, ftp]
+  (2, 1): [ssh, ftp]
+step_limit: 1000
