@@ -77,3 +77,14 @@ def test_stealth_agent_runs_episode():
     assert result.stealth_score is not None
     assert 0.0 <= result.stealth_score <= 1.0
     sim.close()
+
+
+from cybersim.agents.ppo_agent import PPOAgent
+
+def test_ppo_agent_trains_and_runs():
+    sim = NaSimAdapter("cybersim/configs/baselines/tiny.yaml")
+    agent = PPOAgent(sim=sim, total_timesteps=500)
+    agent.train(sim)
+    result = agent.run_episode(sim, max_steps=100)
+    assert isinstance(result, EpisodeResult)
+    sim.close()
