@@ -1,5 +1,7 @@
 # CyberSim -- LLM-Driven Cybersecurity Simulation Framework
 
+[![Sponsor](https://img.shields.io/github/sponsors/fabio-rovai?label=Sponsor&logo=GitHub%20Sponsors&logoColor=EA4AAA&color=EA4AAA)](https://github.com/sponsors/fabio-rovai)
+
 CyberSim is a Python framework that demonstrates how Large Language Models can
 generate realistic cybersecurity environments -- expressed as YAML network
 configurations -- suitable for training and evaluating reinforcement-learning
@@ -120,3 +122,9 @@ cybersim/
 ## License
 
 MIT
+
+---
+
+## Sponsor
+
+If this work is useful to you, you can support its continued development through [GitHub Sponsors](https://github.com/sponsors/fabio-rovai).
